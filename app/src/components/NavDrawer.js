@@ -31,6 +31,13 @@ const MainWrapper = styled.div`
 
 const DrawerWrapper = styled.div`
   width: 200px;
+
+  .Link {
+    display: flex; 
+    text-decoration: none; 
+    color: black;
+  }
+
 `;
 
 const ListWrapper = styled.div`
@@ -51,19 +58,19 @@ const NavDrawer = (props) => {
     <DrawerWrapper > 
       <List>
           <ListItem button>
-            <Link style={{ display: 'flex', textDecoration: 'none', color: 'black' }} to="/Home">
+            <Link className="Link" to="/Home">
               <ListItemIcon><Home /></ListItemIcon>
               <ListItemText primary="home" />
             </Link>
           </ListItem>
           <ListItem button>
-            <Link style={{ display: 'flex', textDecoration: 'none', color: 'black' }} to="/Pics">
+            <Link className="Link"  to="/Pics">
               <ListItemIcon><CameraAlt /></ListItemIcon>
               <ListItemText primary="pics" />
             </Link>
           </ListItem>
           <ListItem button>
-            <Link style={{ display: 'flex', textDecoration: 'none', color: 'black' }} to="/About">
+            <Link className="Link" to="/About">
               <ListItemIcon><Info /></ListItemIcon>
               <ListItemText primary="about" />
             </Link>
