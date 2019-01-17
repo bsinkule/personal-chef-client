@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 
-import { getConfig } from './config';
+import { checkAuth } from './checkAuthenticated';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
-    getConfig,
+    checkAuth,
 });
 

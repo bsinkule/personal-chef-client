@@ -2,7 +2,7 @@ import React from 'react'
 import NoMatch from './NoMatch';
 
 const OneAbout = (props) => {
-  console.log("Oneeee: ", typeof props.match.params.id)
+  console.log("Oneeee: ", props.match.params)
 
   if(props.match.params.id < 50) {
     return <div>Oneeeee</div>

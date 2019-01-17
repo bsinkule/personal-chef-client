@@ -1,1 +1,1 @@
-export const GET_CONFIG = 'GET_CONFIG';
+export const CHECK_AUTHENTICATED = 'CHECK_AUTHENTICATED';
