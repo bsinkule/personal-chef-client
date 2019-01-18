@@ -9,6 +9,7 @@ import styled from 'styled-components';
 
 const MainWrapper = styled.ul`
   display: flex;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
   align-items: center;
