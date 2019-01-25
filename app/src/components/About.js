@@ -36,10 +36,10 @@ const About = (props) => {
       <div className="aboutTop">
         About
         <Link to="/home">Back</Link>
-        <AnchorLink offset='50' href='#one'>section 1</AnchorLink>
-        <AnchorLink offset='50' href='#two'>section 2</AnchorLink> 
-        <AnchorLink offset='50' href='#three'>section 3</AnchorLink>
-        <AnchorLink offset='50' href='#four'>section 4</AnchorLink> 
+        <AnchorLink href='#one'>section 1</AnchorLink>
+        <AnchorLink href='#two'>section 2</AnchorLink> 
+        <AnchorLink href='#three'>section 3</AnchorLink>
+        <AnchorLink href='#four'>section 4</AnchorLink> 
       </div>
       <div className="one anch" id="one"> 
         <div>One</div>
