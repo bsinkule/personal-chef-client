@@ -10,15 +10,16 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Menu from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import AccountCircleTwoTone from '@material-ui/icons/AccountCircleTwoTone';
 import Info from '@material-ui/icons/Info';
 import Home from '@material-ui/icons/Home';
 import CameraAlt from '@material-ui/icons/CameraAlt';
+import Email from '@material-ui/icons/Email';
+import ListAlt from '@material-ui/icons/ListAlt';
 
 import styled from 'styled-components';
 
 const MainWrapper = styled.div`
-  margin-left: 10px;
+  margin-right: 20px;
 
   @media (min-width: 600px) {
     display: none;
@@ -66,16 +67,28 @@ const NavDrawer = (props) => {
           <ListItem button>
             <Link className="Link"  to="/Pics">
               <ListItemIcon><CameraAlt /></ListItemIcon>
-              <ListItemText primary="pics" />
+              <ListItemText primary="food pics" />
             </Link>
           </ListItem>
           <ListItem button>
             <Link className="Link" to="/About">
               <ListItemIcon><Info /></ListItemIcon>
-              <ListItemText primary="about" />
+              <ListItemText primary="who we are" />
             </Link>
           </ListItem>
           <ListItem button>
+            <Link className="Link" to="/FAQ">
+              <ListItemIcon><ListAlt /></ListItemIcon>
+              <ListItemText primary="FAQs" />
+            </Link>
+          </ListItem>
+          <ListItem button>
+            <Link className="Link" to="/Contact">
+              <ListItemIcon><Email /></ListItemIcon>
+              <ListItemText primary="contact" />
+            </Link>
+          </ListItem>
+          {/* <ListItem button>
             {props.checkAuth ? 
               <ListWrapper onClick={props.auth.logout}>
                 <ListItemIcon><AccountCircleTwoTone /></ListItemIcon>
@@ -88,7 +101,7 @@ const NavDrawer = (props) => {
               </ListWrapper>
               }
           </ListItem> 
-        <Divider />  
+        <Divider />   */}
       </List>
     </DrawerWrapper>
   );

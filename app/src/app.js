@@ -14,51 +14,37 @@ import styled from 'styled-components';
 
 const MainWrapper = styled.div`
   .top-nav {
-    grid-area: Nav;
+    background-color: transparent;
+    transition: .6s ease;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
   }
 
-  .side-nav {
-    grid-area: Side;
-    background-color: turquoise;
-  }
-
-  .main {
-    grid-area: Main;
-    background-color: lightgreen;
-  }
-
-  @media (max-width: 600px) {
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    "Nav"
-    "Main"
-    "Side"
-  }
-
-  @media (max-width: 600px) {
-    .side-nav {
-      display: none;
-    }
-  }
-
-  @media (min-width: 600px) {
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: 1fr 4fr;
-    grid-template-areas: 
-    "Nav Nav"
-    "Side Main"
+  .tippy {
+    background-color: rgba(242, 242, 242, .7);
+    transition: .6s ease;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: -.1px;
   }
 `;
 
+
 class App extends Component {
+
+    state = {
+      navColor: "top-nav"
+    }
 
   componentDidMount(){
     this.props.auth.isAuthenticated() ? this.props.checkAuthenticated() : null
+
+    document.addEventListener('scroll', () => {
+      window.scrollY > 30 ? this.setState({ navColor: "tippy"}) : this.setState({ navColor: "top-nav"})
+    });
   }
 
   render() {
@@ -78,14 +64,12 @@ class App extends Component {
     }
 
     console.log("app.js props: ", this.props)
+    console.log('scroll: ', window.scrollY)
 
     return (
-      <MainWrapper>
-        <div className="top-nav">
+      <MainWrapper >
+        <div className={this.state.navColor}>
           <NavBar auth={this.props.auth} mainComponent={mainComponent} />
-        </div>
-        <div className="side-nav">
-          MAYBE SIDE NAV
         </div>
         <div className="main">
           {this.props.children}

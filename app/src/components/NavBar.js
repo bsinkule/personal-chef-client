@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import MyLocation from '@material-ui/icons/MyLocationTwoTone';
-
 import NavDrawer from './NavDrawer'
 
 import styled from 'styled-components';
@@ -10,15 +8,21 @@ import styled from 'styled-components';
 const MainWrapper = styled.ul`
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin: 0;
   padding: 0;
-  align-items: center;
   height: 50px;
-  border-bottom: 1px grey solid;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .none {
+    display: none;
+  }
 
   .li {
     list-style: none;
-    padding: 5px 10px;
+    padding: 5px 20px;
     border-radius: 5px;
 
     &:hover {
@@ -31,9 +35,11 @@ const MainWrapper = styled.ul`
   }
 
   .icon {
+    display: flex;
     list-style: none;
-    margin-left: auto;
+    // margin-left: auto;
     margin-right: auto;
+    padding: 5px 10px;
   }
 
   .wine {
@@ -53,18 +59,17 @@ const MainWrapper = styled.ul`
 `;
 
 const NavBar = (props) => {
-
   console.log("maincomponent", props.mainComponent)
-
   return (
     <MainWrapper>
+      <li className="icon"><Link className="Link" to="/Home"><img className="wine" src="https://img.icons8.com/wired/2x/food-and-wine.png" alt="cheese and wine icon"/></Link><div>kco<br/>dining</div></li>
+      {/* <li className="media li"><Link className="Link" to="/Home">home</Link></li> */}
+      <li className="media li"><Link className="Link" to="/Pics">food pics</Link></li>
+      <li className="media li"><Link className="Link" to="/About">who we are</Link></li>
+      <li className="media li"><Link className="Link" to="/FAQ">FAQs</Link></li>
+      <li className="media li"><Link className="Link" to="/Contact">contact</Link></li>
       <NavDrawer auth={props.auth} />
-      <li className="media li"><Link className="Link" to="/Home">home</Link></li>
-      <li className="media li"><Link className="Link" to="/Pics">pics</Link></li>
-      <li className="icon"><img className="wine" src="https://img.icons8.com/wired/2x/food-and-wine.png" alt="cheese and wine icon"/></li>
-      {/* <li className="icon"><MyLocation fontSize="large" /></li> */}
-      <li className="media li"><Link className="Link" to="/About">about</Link></li>
-      <li className="li">{props.mainComponent}</li>
+      <li className="li none">{props.mainComponent}</li>
     </MainWrapper>
   )
 }
