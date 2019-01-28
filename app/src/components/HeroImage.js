@@ -40,10 +40,6 @@ const MainWrapper = styled.div`
             text-decoration: none; 
             color: white;
           }
-
-          :hover {
-            background-color: #bfbfbf;
-          }
       }
 
   }
@@ -58,9 +54,6 @@ const HeroImage = () => {
           <p>we'd love to cook for you</p>
           <button><Link to="/Contact" className="Link">contact us</Link></button>
         </div>
-      </div>
-      <div style={{ height: '500px' }}>
-        space
       </div>
     </MainWrapper>
   )

@@ -16,6 +16,9 @@ const MainWrapper = styled.div`
   .top-nav {
     background-color: transparent;
     transition: .6s ease;
+    -webkit-transition: .6s ease;
+    -moz-transition: .6s ease;
+    -o-transition: .6s ease;
     position: fixed;
     width: 100%;
     z-index: 2;
@@ -25,6 +28,9 @@ const MainWrapper = styled.div`
   .tippy {
     background-color: rgba(242, 242, 242, .7);
     transition: .6s ease;
+    -webkit-transition: .6s ease;
+    -moz-transition: .6s ease;
+    -o-transition: .6s ease;
     position: fixed;
     width: 100%;
     z-index: 2;

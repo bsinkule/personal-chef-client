@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import target from '../static/images/026-target.png';
-
 import styled from 'styled-components';
 
 const MainWrapper = styled.div`
@@ -37,7 +35,6 @@ const FAQ = (props) => {
   console.log("FAQ props: ", props)
   return (
     <MainWrapper>
-      <img src={target} />
       <div className="aboutTop">
         <AnchorLink offset='50' href='#one'>question 1</AnchorLink>
         <AnchorLink offset='50' href='#two'>question 2</AnchorLink> 
