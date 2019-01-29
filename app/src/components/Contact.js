@@ -183,9 +183,7 @@ const Contact = () => {
     <MainWrapper>
       <div className="formWrapper">
         <div>
-          {/* <form onSubmit={submitForm} className="contact"> */}
           <form onSubmit={submitForm} className="contact" name="contact" method="post">
-          {/* <form className="contact" name="contact" method="post"> */}
             <input className="input" type="hidden" name="form-name" value="contact" />
             <div className="divInput">
               <label>Name</label> <br/>
@@ -212,7 +210,6 @@ const Contact = () => {
             <div className="divInput">
               <label>Date you are interested in</label> <br/>
               <div className="red">* required</div>
-              {/* <DayPickerInput type="text" name="date" onDayChange={day => setDate(day)} value={date} onChange={handleChange}/> */}
               <DayPickerInput onDayChange={day => setDate(day)} />
               <input className="none input" type="text" name="date" defaultValue={date}  onChange={handleChange}/>
               <div className="errorMsg">{errors.date}</div>
