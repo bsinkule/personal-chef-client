@@ -104,6 +104,12 @@ const Contact = () => {
     setFields(input)
   }
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
   const submitForm = (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -112,6 +118,12 @@ const Contact = () => {
       setTimeout(() => {
         setSubmitted(1);
       }, 3000)
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", fields })
+      })
 
       console.log("submit fields: ", fields, validateForm())
 
@@ -171,7 +183,8 @@ const Contact = () => {
     <MainWrapper>
       <div className="formWrapper">
         <div>
-          <form onSubmit={submitForm} className="contact" name="contact" method="post">
+          <form onSubmit={submitForm} className="contact" name="contact">
+          {/* <form onSubmit={submitForm} className="contact" name="contact" method="post"> */}
             <input className="input" type="hidden" name="form-name" value="contact" />
             <div className="divInput">
               <label>Name</label> <br/>
