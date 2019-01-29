@@ -104,31 +104,32 @@ const Contact = () => {
     setFields(input)
   }
 
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-  }
+  // const encode = (data) => {
+  //   return Object.keys(data)
+  //     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  //     .join("&");
+  // }
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
+  // const submitForm = (e) => {
+  //   e.preventDefault();
+  //   if (validateForm()) {
 
-      setSubmitted(2)
-      setTimeout(() => {
-        setSubmitted(1);
-      }, 3000)
+  //     setSubmitted(2)
+  //     setTimeout(() => {
+  //       setSubmitted(1);
+  //     }, 3000)
 
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", fields })
-      })
+  //     fetch("/", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //       body: encode({ "form-name": "contact", fields })
+  //     })
 
-      .then(() => setFields({}))
-      console.log("submit fields: ", fields, validateForm())
-    } else { setSubmitted(3) }
-  }
+  //     setFields({})
+  //     e.target.reset()
+  //     console.log("submit fields: ", fields, validateForm())
+  //   } else { setSubmitted(3) }
+  // }
 
   const validateForm = () => {
     let errors = {};
@@ -181,9 +182,10 @@ const Contact = () => {
     <MainWrapper>
       <div className="formWrapper">
         <div>
-          <form onSubmit={submitForm} className="contact">
+          {/* <form onSubmit={submitForm} className="contact"> */}
           {/* <form onSubmit={submitForm} className="contact" name="contact" method="post"> */}
-            {/* <input className="input" type="hidden" name="form-name" value="contact" /> */}
+          <form className="contact" name="contact" method="post">
+            <input className="input" type="hidden" name="form-name" value="contact" />
             <div className="divInput">
               <label>Name</label> <br/>
               <div className="red">* required</div>
