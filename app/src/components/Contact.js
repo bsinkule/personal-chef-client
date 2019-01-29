@@ -183,7 +183,7 @@ const Contact = () => {
     <MainWrapper>
       <div className="formWrapper">
         <div>
-          <form onSubmit={submitForm} className="contact" name="contact">
+          <form onSubmit={submitForm} className="contact">
           {/* <form onSubmit={submitForm} className="contact" name="contact" method="post"> */}
             <input className="input" type="hidden" name="form-name" value="contact" />
             <div className="divInput">
