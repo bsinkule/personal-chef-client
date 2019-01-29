@@ -125,10 +125,8 @@ const Contact = () => {
         body: encode({ "form-name": "contact", fields })
       })
 
+      .then(() => setFields({}))
       console.log("submit fields: ", fields, validateForm())
-
-      e.target.reset();
-      setFields({})
     } else { setSubmitted(3) }
   }
 
