@@ -104,12 +104,6 @@ const Contact = () => {
     setFields(input)
   }
 
-  // const encode = (data) => {
-  //   return Object.keys(data)
-  //     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-  //     .join("&");
-  // }
-
   // const submitForm = (e) => {
   //   e.preventDefault();
   //   if (validateForm()) {
@@ -130,6 +124,13 @@ const Contact = () => {
   //     console.log("submit fields: ", fields, validateForm())
   //   } else { setSubmitted(3) }
   // }
+
+  const submitForm = (e) => {
+    if (!validateForm()) {
+      e.preventDefault()
+      return setSubmitted(3)
+    }  
+  }
 
   const validateForm = () => {
     let errors = {};
@@ -183,8 +184,8 @@ const Contact = () => {
       <div className="formWrapper">
         <div>
           {/* <form onSubmit={submitForm} className="contact"> */}
-          {/* <form onSubmit={submitForm} className="contact" name="contact" method="post"> */}
-          <form className="contact" name="contact" method="post">
+          <form onSubmit={submitForm} className="contact" name="contact" method="post">
+          {/* <form className="contact" name="contact" method="post"> */}
             <input className="input" type="hidden" name="form-name" value="contact" />
             <div className="divInput">
               <label>Name</label> <br/>
