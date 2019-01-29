@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -9,10 +9,12 @@ import Login from './components/auth/Login.js';
 import NotFound from './components/auth/NotFound.js';
 import Callback from './components/auth/Callback.js';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 import styled from 'styled-components';
 
 const MainWrapper = styled.div`
+
   .top-nav {
     background-color: transparent;
     transition: .6s ease;
@@ -26,7 +28,7 @@ const MainWrapper = styled.div`
   }
 
   .tippy {
-    background-color: rgba(242, 242, 242, .7);
+    background-color: rgba(242, 242, 242, .95);
     transition: .6s ease;
     -webkit-transition: .6s ease;
     -moz-transition: .6s ease;
@@ -69,17 +71,18 @@ class App extends Component {
             mainComponent = <Main {...this.props} />;
     }
 
-    console.log("app.js props: ", this.props)
-    console.log('scroll: ', window.scrollY)
+    // console.log("app.js props: ", this.props)
+    // console.log('scroll: ', window.scrollY)
 
     return (
       <MainWrapper >
         <div className={this.state.navColor}>
-          <NavBar auth={this.props.auth} mainComponent={mainComponent} />
+          <NavBar />
         </div>
         <div className="main">
           {this.props.children}
         </div>
+        <Footer mainComponent={mainComponent}/>
       </MainWrapper>
     )
   }

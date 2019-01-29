@@ -1,11 +1,11 @@
 import React from 'react';
 import HeroImage from './HeroImage';
 
-import calendar from '../static/images/006-calendar-4.png';
-import contact from '../static/images/resume (1).png';
-import phone from '../static/images/007-time-and-date.png';
-import email from '../static/images/files-and-folders.png';
-import grocery from '../static/images/002-groceries.png';
+import calendar from '../static/images/001-calendar.png';
+import contact from '../static/images/002-clipboard.png';
+import phone from '../static/images/005-emergency-call.png';
+import email from '../static/images/004-email.png';
+import grocery from '../static/images/003-food-and-restaurant.png';
 
 import styled from 'styled-components';
 
@@ -118,7 +118,7 @@ const Home = () => {
         <div className="howGrey">
           <div className="content">
             <h2>Confirmation</h2>
-            <div>With the info from our call, we'll finalize and email you the menu for the dinner, the confirmed date and the price estimate</div>
+            <div>With the info from our call, we'll finalize and email you the menu for the dinner, the confirmed date and the price estimate.</div>
           </div>
           <img className="imgIcon" src={email}  alt="email icon"/>
 
@@ -129,7 +129,7 @@ const Home = () => {
           <img className="imgIcon" src={grocery}  alt="grocery icon"/>
           <div className="content">
             <h2>Day of the Dinner</h2>
-            <div>We'll show up on the day of the dinner with all the groceries and cooking equipment. All we need from you is your kitchen space. THAT'S IT! IT'S EASY, FUN AND DELICIOUS!</div>
+            <div>We'll show up on the scheduled day with all the groceries and cooking equipment. All we need from you is your kitchen space.</div>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const Main = (props) => {
   return (
     <div >
       {!props.auth.isAuthenticated() ? 
-          <Para onClick={props.auth.login}>login</Para>
+          <Para onClick={props.auth.login}>admin</Para>
         :
           <Para onClick={props.auth.logout}>logout</Para>
         }

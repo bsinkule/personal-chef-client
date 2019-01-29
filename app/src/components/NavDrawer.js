@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -88,20 +87,6 @@ const NavDrawer = (props) => {
               <ListItemText primary="contact" />
             </Link>
           </ListItem>
-          {/* <ListItem button>
-            {props.checkAuth ? 
-              <ListWrapper onClick={props.auth.logout}>
-                <ListItemIcon><AccountCircleTwoTone /></ListItemIcon>
-                <ListItemText primary="logout" /> 
-              </ListWrapper> 
-              :
-              <ListWrapper onClick={props.auth.login}> 
-                <ListItemIcon><AccountCircleTwoTone /></ListItemIcon>
-                <ListItemText primary="login" /> 
-              </ListWrapper>
-              }
-          </ListItem> 
-        <Divider />   */}
       </List>
     </DrawerWrapper>
   );
