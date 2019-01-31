@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroImage from './HeroImage';
+import Motivation from './Motivation';
 
 import calendar from '../static/images/001-calendar.png';
 import contact from '../static/images/002-clipboard.png';
@@ -13,14 +14,18 @@ const MainWrapper = styled.div`
 
   .fullWidthGrey {
     width: 100%;
-    height: 200px;
+    height: 225px;
     background-color: rgb(249, 249, 249);
   }
 
   .fullWidthWhite {
     width: 100%;
-    height: 200px;
-    // background-color: rgba(217, 217, 217, .95);
+    height: 225px;
+  }
+
+  .motivationFullWidth {
+    width: 100%;
+    background-color: rgb(249, 249, 249);
   }
 
   .howWhite {
@@ -57,28 +62,22 @@ const MainWrapper = styled.div`
 
   .howItWorksH1 {
     margin: 0;
-    padding: 5px;
+    padding: 20px 5px 5px 5px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
 
-  .imgNum {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-  }
-
   .imgIcon {
-    width: 125px;
-    height: 125px;
-    margin: 5px;
+    width: 100px;
+    height: 100px;
+    margin: 15px;
   }
 
   .content {
-    max-width: 600px;
-    padding: 5px;
+    width: 900px;
+    padding: 10px;
   }
 `;
 
@@ -86,6 +85,10 @@ const Home = () => {
   return (
     <MainWrapper>
       <HeroImage />
+      <div className="motivationFullWidth">
+        <h1 className="howItWorksH1">Our Motivation</h1>    
+          <Motivation />
+      </div>
       <div className="fullWidthWhite">
         <h1 className="howItWorksH1">How it Works</h1>
         <div className="howWhiteSpecial">

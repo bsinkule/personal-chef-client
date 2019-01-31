@@ -86,6 +86,10 @@ const MainWrapper = styled.div`
     text-align: center;
     padding: 10px;
   }
+
+  h4 {
+    text-align: center;
+  }
 `;
 
 const Contact = () => {
@@ -237,6 +241,8 @@ const Contact = () => {
             submitted === 2 ? <div className="success">Form Submitted Successfully!!!</div> : 
             null}
           </form>
+          <h4>We'll get back to you within 24hrs of the form being submitted</h4>
+
         </div>
       </div>
     </MainWrapper>

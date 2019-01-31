@@ -169,8 +169,10 @@ html, body {
 /* Default modifiers */
 
 .DayPicker-Day--today {
-  color: #D0021B;
+  // color: #0000ff;
+  color: black;
   font-weight: 700;
+  background-color: rgb(233, 233, 233);
 }
 
 .DayPicker-Day--outside {
@@ -179,9 +181,10 @@ html, body {
 }
 
 .DayPicker-Day--disabled {
-  color: #DCE0E0;
+  color: #D0021B;
   cursor: default;
-  /* background-color: #eff1f1; */
+  text-decoration: line-through;
+  // background-color: rgba(255, 0, 0, .2); 
 }
 
 /* Example modifiers */

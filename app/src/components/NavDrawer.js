@@ -72,7 +72,7 @@ const NavDrawer = (props) => {
           <ListItem button>
             <Link className="Link" to="/About">
               <ListItemIcon><Info /></ListItemIcon>
-              <ListItemText primary="who we are" />
+              <ListItemText primary="about us" />
             </Link>
           </ListItem>
           <ListItem button>

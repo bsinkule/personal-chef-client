@@ -1,1 +1,3 @@
 export const CHECK_AUTHENTICATED = 'CHECK_AUTHENTICATED';
+export const ADD_DAY = 'ADD_DAY';
+export const REMOVE_DAY = 'REMOVE_DAY';

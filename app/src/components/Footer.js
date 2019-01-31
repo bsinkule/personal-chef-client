@@ -55,7 +55,7 @@ const Footer = (props) => {
           <h4 className="siteH4">Site Map ></h4>
           <Link className="Link" to="/Home">home</Link>
           <Link className="Link" to="/Pics">food pics</Link>
-          <Link className="Link" to="/About">who we are</Link>
+          <Link className="Link" to="/About">about us</Link>
         </div>
         <div className="siteMap2">
           <Link className="Link" to="/FAQ">FAQs</Link>

@@ -10,6 +10,8 @@ import NotFound from './components/auth/NotFound.js';
 import Callback from './components/auth/Callback.js';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import CalendarButton from './components/CalendarButton';
+import Calendar from './components/Calendar';
 
 import styled from 'styled-components';
 
@@ -38,13 +40,15 @@ const MainWrapper = styled.div`
     z-index: 2;
     top: -.1px;
   }
+
 `;
 
 
 class App extends Component {
 
     state = {
-      navColor: "top-nav"
+      navColor: "top-nav",
+      calendarClicked: false,
     }
 
   componentDidMount(){
@@ -53,6 +57,13 @@ class App extends Component {
     document.addEventListener('scroll', () => {
       window.scrollY > 30 ? this.setState({ navColor: "tippy"}) : this.setState({ navColor: "top-nav"})
     });
+  }
+
+  toggleCalendar = () => {
+    const tog = !this.state.calendarClicked
+    this.setState({
+        calendarClicked: tog
+    })
   }
 
   render() {
@@ -83,6 +94,8 @@ class App extends Component {
           {this.props.children}
         </div>
         <Footer mainComponent={mainComponent}/>
+        <div onClick={this.toggleCalendar}><CalendarButton /></div>
+        {this.state.calendarClicked ? <Calendar /> : ''}
       </MainWrapper>
     )
   }
@@ -95,7 +108,9 @@ const bindActions = (dispatch) => ({
 const mapStateToProps = (state) => ({
   router: state.router,
   checkAuth: state.checkAuth,
+  savedDays: state.savedDays,
 });
 
 export default withRouter(connect(mapStateToProps, bindActions)(App));
 
+{/* <button onClick={() => window.scroll({ top: 0, left: 0, behavior: 'smooth' })}>TOP</button> */}

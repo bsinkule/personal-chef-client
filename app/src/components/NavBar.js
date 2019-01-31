@@ -62,7 +62,7 @@ const NavBar = (props) => {
     <MainWrapper>
       <li className="icon"><Link className="Link" to="/Home"><img className="wine" src="https://img.icons8.com/wired/2x/food-and-wine.png" alt="cheese and wine icon"/></Link><div>kco<br/>dining</div></li>
       <li className="media li"><Link className="Link" to="/Pics">food pics</Link></li>
-      <li className="media li"><Link className="Link" to="/About">who we are</Link></li>
+      <li className="media li"><Link className="Link" to="/About">about us</Link></li>
       <li className="media li"><Link className="Link" to="/FAQ">FAQs</Link></li>
       <li className="media li"><Link className="Link" to="/Contact">contact</Link></li>
       <NavDrawer />
