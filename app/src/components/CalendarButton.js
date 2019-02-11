@@ -10,7 +10,6 @@ const MainWrapper = styled.div`
   right: 20px;
   width: 65px;
   height: 65px;
-  // background-color: rgba(255, 184, 77,0.9);
   background-color: rgba(153,153,153,0.9);
   display: flex;
   justify-content: center;

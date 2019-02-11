@@ -10,11 +10,16 @@ const MainWrapper = styled.div`
   background-color: white;
   border-radius: 10px;
   border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
 `;
 
 const Calendar = () => {
   return (
     <MainWrapper>
+      <div>Available Dates</div>
       <DayPicker
         disabledDays={[
           new Date(2019, 0, 25),

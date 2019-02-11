@@ -28,7 +28,7 @@ const MainWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 20px;
+    padding: 15px;
   }
 
   .siteMap2 {
@@ -36,7 +36,7 @@ const MainWrapper = styled.div`
     flex-direction: column;
     align-self: flex-end;
     margin: 20px;
-    padding: 20px 20px 0px 0px;
+    padding: 15px 15px 0px 0px;
     border-right: 1px solid white;
   }
 

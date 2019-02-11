@@ -8,8 +8,8 @@ const MainWrapper = styled.div`
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 75px;
+  padding-bottom: 100px; 
 
   .formWrapper {
     width: 90%;
