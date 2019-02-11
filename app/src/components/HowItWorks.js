@@ -21,11 +21,6 @@ const MainWrapper = styled.div`
     height: 225px;
   }
 
-  .motivationFullWidth {
-    width: 100%;
-    background-color: rgb(249, 249, 249);
-  }
-
   .howWhite {
     display: flex;
     justify-content: center;
@@ -74,7 +69,7 @@ const MainWrapper = styled.div`
   }
 
   .content {
-    width: 900px;
+    max-width: 900px;
     padding: 10px;
   }
 
