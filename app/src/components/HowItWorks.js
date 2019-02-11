@@ -69,7 +69,7 @@ const MainWrapper = styled.div`
   }
 
   .content {
-    max-width: 900px;
+    width: 100%;
     padding: 10px;
   }
 
