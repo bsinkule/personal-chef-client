@@ -69,7 +69,7 @@ const MainWrapper = styled.div`
   }
 
   .content {
-    width: 100%;
+    width: 85%;
     padding: 10px;
   }
 
