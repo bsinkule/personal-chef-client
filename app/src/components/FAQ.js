@@ -39,8 +39,8 @@ const MainWrapper = styled.div`
   }
 
   .anch {
-    min-height: 250px;
-    padding: 15px;
+    min-height: 200px;
+    padding: 15px 0px 15px 15px;
   }
 
   .flexQARed {
@@ -51,7 +51,6 @@ const MainWrapper = styled.div`
 
   .flexQA {
     display: flex;
-    background-color: rgba(242, 242, 242, .4);
     align-items: center;
     border-left: 2px solid black;
   }
@@ -69,7 +68,7 @@ const MainWrapper = styled.div`
   }
 
   .answerContent {
-    padding: 5px;
+    padding: 15px;
   }
 `;
 
@@ -79,7 +78,7 @@ const FAQ = (props) => {
     <MainWrapper>
       <div className="faqWrapper"> 
         <div style={{ padding: "0px 15px 15px 15px" }}>
-          <h1>Frequently Asked Questions</h1>
+          <h2>Frequently Asked Questions</h2>
           <div className="aboutTop">
             <AnchorLink className="faqLink" offset='50' href='#one'>How is the price calculated?</AnchorLink>
             <AnchorLink className="faqLink" offset='50' href='#two'>How early will you arrive?</AnchorLink> 
