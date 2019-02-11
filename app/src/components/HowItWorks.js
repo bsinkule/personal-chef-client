@@ -77,6 +77,13 @@ const MainWrapper = styled.div`
     width: 900px;
     padding: 10px;
   }
+
+  @media (max-width: 800px) {
+    .imgIcon { 
+      width: 65px;
+      height: 65px;
+    }
+  }
 `;
 
 const HowItWorks = () => {
