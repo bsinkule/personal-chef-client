@@ -33,7 +33,7 @@ const Ul = styled.ul`
   grid-template-rows: minmax(150px, 1fr);
 
   overflow-x: scroll;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   padding-bottom: 15px;
   margin-bottom: -5px;
   }
