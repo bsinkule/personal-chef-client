@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const MainWrapper = styled.div`
   .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("https://agc.creativelive.com/agc/courses/5138-1.jpg");
+    background-image: linear-gradient(rgba(255, 245, 230, 0.1), rgba(255, 245, 230, 0.2)), url("https://agc.creativelive.com/agc/courses/5138-1.jpg");
     // background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1541529086526-db283c563270?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     height: 600px;
     background-position: center;
@@ -21,16 +21,19 @@ const MainWrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    // color: white;
 
       h1 {
-        font-size: 60px;
+        font-size: 40px;
+        background-color: rgba(255, 245, 230, .9);
+        padding: 35px 15px;
+        border-radius: 30px;
       }
 
       p {
-        background-color: rgba(140, 140, 140, .8);
+        background-color: rgba(255, 245, 230, .9);
         padding: 5px;
-        border-radius: 10px;
+        border-radius: 20px;
         font-size: 18px;
       }
 

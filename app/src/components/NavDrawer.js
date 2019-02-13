@@ -64,7 +64,7 @@ const NavDrawer = (props) => {
             </Link>
           </ListItem>
           <ListItem button>
-            <Link className="Link"  to="/Pics">
+            <Link className="Link"  to="/FoodPics">
               <ListItemIcon><CameraAlt /></ListItemIcon>
               <ListItemText primary="food pics" />
             </Link>

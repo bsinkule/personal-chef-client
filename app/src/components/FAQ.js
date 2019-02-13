@@ -40,10 +40,10 @@ const MainWrapper = styled.div`
 
   .anch {
     min-height: 200px;
-    padding: 15px 0px 15px 15px;
+    padding: 15px;
   }
 
-  .flexQARed {
+  .flexQAOrange {
     display: flex;
     background-color: rgba(255, 245, 230, .4);
     align-items: center;
@@ -92,7 +92,7 @@ const FAQ = (props) => {
 
       <div className="faqWrapper">
           <div className="anch" id="one"> 
-            <div className="flexQARed">
+            <div className="flexQAOrange">
               <div className="bigQ">Q.</div>
               <h3>How much does it cost?</h3>
             </div>
@@ -102,7 +102,7 @@ const FAQ = (props) => {
             </div>
           </div>
           <div className="anch" id="two"> 
-            <div className="flexQARed">
+            <div className="flexQAOrange">
               <div className="bigQ">Q.</div>
               <h3>How early will you arrive?</h3>
             </div>
@@ -112,7 +112,7 @@ const FAQ = (props) => {
             </div>
           </div>
           <div className="anch" id="three"> 
-            <div className="flexQARed">
+            <div className="flexQAOrange">
               <div className="bigQ">Q.</div>
               <h3>Do you do the dishes?</h3>
             </div>
@@ -122,17 +122,17 @@ const FAQ = (props) => {
             </div>
           </div>
           <div className="anch" id="four"> 
-            <div className="flexQARed">
+            <div className="flexQAOrange">
               <div className="bigQ">Q.</div>
               <h3>Do you bring dishware and silverware?</h3>
             </div>
             <div className="flexQA">
               <div className="bigA">A.</div>
-              <div className="answerContent">We usually we serve you on your dishware with your silverware and glassware. We are happy to make arangements to supply any of those if you would prefer.</div>
+              <div className="answerContent">We usually serve you on your dishware with your silverware and glassware. We are happy to make arangements to supply any of those if you would prefer.</div>
             </div>
           </div>
           <div className="anch" id="five"> 
-            <div className="flexQARed">
+            <div className="flexQAOrange">
               <div className="bigQ">Q.</div>
               <h3>What are your available dates?</h3>
             </div>

@@ -63,7 +63,7 @@ const Motivation = () => {
         <h3>Hosting</h3>
         <div className="body">
           <p>
-            "We love being around people that are having a fun time. Normally that fun is happening around food and drinks and it's always a great pleasure for us to be able to come into people's homes and help facilitate their fun evening."
+            "We love being around people that are having a fun time, normally that fun is happening around food and drinks. It's always a great pleasure for us to be able to come into people's homes and help facilitate their fun evening."
           </p>
           <p>- Kyle and Con</p>
         </div>

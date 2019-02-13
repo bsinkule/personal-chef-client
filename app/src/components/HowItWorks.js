@@ -75,8 +75,8 @@ const MainWrapper = styled.div`
 
   @media (max-width: 800px) {
     .imgIcon { 
-      width: 65px;
-      height: 65px;
+      width: 75px;
+      height: 75px;
     }
   }
 `;

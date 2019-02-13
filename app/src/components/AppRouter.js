@@ -9,6 +9,7 @@ import About from './About';
 import OneAbout from './OneAbout';
 import Loading from './auth/Loading';
 import NoMatch from './NoMatch';
+import FoodPics from './FoodPics';
 
 const AppRouter = () => {
 
@@ -17,6 +18,7 @@ const AppRouter = () => {
         <Route exact path="/" component={Home} />
         <Route path="/home" component={Home} />
         <Route path="/faq" component={FAQ} />
+        <Route path="/foodpics" component={FoodPics} />
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
         <Route path="/callback" component={Loading} />
