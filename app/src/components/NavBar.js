@@ -26,7 +26,7 @@ const MainWrapper = styled.ul`
     border-radius: 5px;
 
     &:hover {
-      background-color: #e6e6e6;
+      background-color: rgba(255, 245, 230, .9);
     }
   }
 
