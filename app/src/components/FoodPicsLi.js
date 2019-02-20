@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+
 import star from '../static/images/rate.png';
 
 import styled from 'styled-components';
@@ -93,4 +95,8 @@ const FoodPicsLi = (props) => {
   )
 }
 
-export default FoodPicsLi;
+const mapStateToProps = (state) => ({
+  checkAuth: state.checkAuth.authenticated,
+});
+
+export default connect(mapStateToProps, null)(FoodPicsLi);
