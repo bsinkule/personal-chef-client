@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import star from '../static/images/rate.png';
 import FoodPicsLi from './FoodPicsLi';
 
@@ -32,7 +34,7 @@ const MainWrapper = styled.div`
     width: 90vw;
     max-width: 1300px;
     background-color: rgba(224,224,224, .9);
-    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     border-radius: 10px;
     height: 100%;
     display: flex;
@@ -50,6 +52,25 @@ const MainWrapper = styled.div`
     margin-right: 5px;
   }
 
+  
+  .Link {
+    text-decoration: none; 
+    color: black;
+  }
+  
+  .topOfPics {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .addImgButton {
+    background-color: rgba(255, 245, 230, .9);
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+    width: 120px;  
+    height: 40px;
+  }
 `;
 
 const Ul = styled.ul`
@@ -57,12 +78,12 @@ const Ul = styled.ul`
   padding: 0;
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: 20px repeat(${props => props.numOfLi || 3}, 250px) 20px;
+  grid-template-columns: 20px repeat(${props => props.numOfLi || 3}, 185px) 20px;
   // grid-template-columns: 10px repeat(${props => props.numOfLi || 3}, calc(50% - 40px)) 10px;
   grid-template-rows: minmax(300px, 1fr);
 
   overflow-x: auto;
-  scroll-snap-type: x proximity;
+  // scroll-snap-type: x proximity;
   padding-bottom: 15px;
   margin-bottom: -5px;
   }
@@ -77,7 +98,7 @@ const Ul = styled.ul`
   }
 
   .imgLi {
-    scroll-snap-align: center;
+    // scroll-snap-align: center;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -103,7 +124,14 @@ const FoodPics = (props) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [setData]);
+
+  const deleteFoodPic = (id) => {
+    axios.delete(imageAPI + id)
+    .then(res => {
+      setData(res.data.reverse())
+    })
+  }
 
   const numberOfLis = (typeString) => {
     const filteredType = data.filter(items => items.item_type === typeString);
@@ -123,6 +151,7 @@ const FoodPics = (props) => {
                           item_type={item.item_type}
                           recommended={item.recommended}
                           orientation={item.orientation}
+                          deleteFoodPic={deleteFoodPic}
                           />
     })
     return imgs
@@ -134,24 +163,29 @@ const FoodPics = (props) => {
     
     <MainWrapper>
       <div className="formWrapper">
-        <div className="popular"><img className="star" src={star} alt="star"/>popular</div>
+        <div className="topOfPics">
+          <div className="popular"><img className="star" src={star} alt="star"/>popular</div>
+          {props.checkAuth ? <button className="addImgButton"><Link className="Link" to={`/addfoodpic`}>Add Food Pic</Link></button> : null}
+        </div>
         <h1>Entrées</h1>
         <Ul numOfLi={numberOfLis("entree")} className="full">
           {filteredImgs("entree")}
         </Ul>
-        <h1>sup</h1>
-        <Ul numOfLi={5} className="full">
-          <li className="imgLi">brah</li>
-          <li className="imgLi">brah</li>
-          <li className="imgLi">brah</li>
-          <li className="imgLi">brah</li>
-          <li className="imgLi">brah</li>
+        <h1>Appetizers</h1>
+        <Ul numOfLi={numberOfLis("appetizer")} className="full">
+          {filteredImgs("appetizer")}
         </Ul>
-        <h1>sup</h1>
-        <Ul numOfLi={3} className="full">
-          <li className="imgLi">brah</li>
-          <li className="imgLi">brah</li>
-          <li className="imgLi">brah</li>
+        <h1>Drinks</h1>
+        <Ul numOfLi={numberOfLis("drink")} className="full">
+          {filteredImgs("drink")}
+        </Ul>
+        <h1>Soups / Salads</h1>
+        <Ul numOfLi={numberOfLis("soup/salad")} className="full">
+          {filteredImgs("soup/salad")}
+        </Ul>
+        <h1>Desserts</h1>
+        <Ul numOfLi={numberOfLis("dessert")} className="full">
+          {filteredImgs("dessert")}
         </Ul>
       </div>
     </MainWrapper>

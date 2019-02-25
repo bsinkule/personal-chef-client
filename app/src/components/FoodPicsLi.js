@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import star from '../static/images/rate.png';
@@ -6,7 +7,7 @@ import star from '../static/images/rate.png';
 import styled from 'styled-components';
 
 const Li = styled.li`
-  scroll-snap-align: center;
+  // scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -27,10 +28,11 @@ const Li = styled.li`
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   }
 
-  h3 {
+  h5 {
     background-color: rgba(255, 245, 230, .9);
     padding: 10px;
     border-radius: 20px;
+    text-align: center;
   }
 
   .imgContainer {
@@ -43,7 +45,7 @@ const Li = styled.li`
     left: 10px;
   }
 
-  .deleteFoodPicButton {
+  .deleteUpdateButton {
     background-color: rgba(255, 245, 230, .9);
     border-radius: 20px;
     margin-top: 5px;
@@ -59,9 +61,16 @@ const Li = styled.li`
     flex-direction: column;
     align-items: center;
   }
+
+  .Link {
+    text-decoration: none; 
+    color: black;
+  }
+
 `;
 
 const FoodPicsLi = (props) => {
+
   return (
     <Li 
       key={props.id}
@@ -78,15 +87,14 @@ const FoodPicsLi = (props) => {
         <img className="foodPic" src={props.img_url} alt="food pic"/>
       </div>
       }
-      <h3>{props.title}</h3>
-      {!props.checkAuth 
+      <h5>{props.title}</h5>
+      {props.checkAuth 
       ?
       <div>
         <div className="cta">
-          <button className="deleteFoodPicButton" onClick={() => props.deleteFoodPic(props.id)}>Delete</button>
-          <button className="deleteFoodPicButton">Update</button>
+          <button className="deleteUpdateButton" onClick={() => props.deleteFoodPic(props.id)}>Delete</button>
+          <button className="deleteUpdateButton"><Link className="Link" to={`/foodpicupdateform/${props.id}`}>Update</Link></button>
         </div>
-        {/* {this.state.authForm ? <UpdateEngineer engApiData={this.props.engApiData} name={this.props.name} title={this.props.title} department={this.props.department} startDate={this.props.startDate} endDate={this.props.endDate} hoursPerWeek={this.props.hoursPerWeek} hourlyWage={this.props.hourlyWage} id={this.props.id} imgUrl={this.props.imgUrl} /> : null} */}
       </div>
       :
       null

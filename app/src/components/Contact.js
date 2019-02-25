@@ -15,7 +15,7 @@ const MainWrapper = styled.div`
     width: 90%;
     max-width: 800px;
     background-color: rgba(224,224,224, .9);
-    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     border-radius: 10px;
     height: 100%;
     margin-left: auto;
@@ -54,7 +54,6 @@ const MainWrapper = styled.div`
 
   .button {
     font-size: 20px;
-    border: 1px solid black;
     border-radius: 5px;
     background-color: white;
     margin: 20px;
@@ -67,21 +66,21 @@ const MainWrapper = styled.div`
   }
 
   .errorMsg {
-    margin-bottom: 12px;
+    margin: 5px 0px;
     background-color: rgba(255, 0, 0, .6);
     border-radius: 3px;
+    line-height: 1.5;
   }
 
   .fail {
     background-color: rgba(255, 0, 0, .6);
     border-radius: 3px;
-    // border: 1px solid black;
     text-align: center;
     padding: 10px;
   }
 
   .success {
-    background-color: rgba(0, 153, 51, .6);
+    background-color: rgba(102, 255, 102, .6);
     border-radius: 3px;
     text-align: center;
     padding: 10px;
@@ -89,6 +88,7 @@ const MainWrapper = styled.div`
 
   h4 {
     text-align: center;
+    padding: 0px 10px;
   }
 `;
 

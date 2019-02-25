@@ -6,10 +6,11 @@ import Home from './Home';
 import FAQ from './FAQ';
 import Contact from './Contact';
 import About from './About';
-import OneAbout from './OneAbout';
 import Loading from './auth/Loading';
 import NoMatch from './NoMatch';
 import FoodPics from './FoodPics';
+import FoodPicUpdateForm from './FoodPicUpdateForm';
+import FoodPicAddForm from './FoodPicAddForm';
 
 const AppRouter = () => {
 
@@ -22,7 +23,8 @@ const AppRouter = () => {
         <Route path="/contact" component={Contact} />
         <Route path="/about" component={About} />
         <Route path="/callback" component={Loading} />
-        <Route path="/oneabout/:id" component={OneAbout} />
+        <Route path="/foodpicupdateform/:id" component={FoodPicUpdateForm} />
+        <Route path="/addfoodpic" component={FoodPicAddForm} />
         <Route component={NoMatch} />
       </Switch>
     );

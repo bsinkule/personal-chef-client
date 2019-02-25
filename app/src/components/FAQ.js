@@ -17,7 +17,7 @@ const MainWrapper = styled.div`
     width: 90%;
     max-width: 800px;
     background-color: rgba(224,224,224, .9);
-    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     border-radius: 10px;
     height: 100%;
     margin-left: auto;
