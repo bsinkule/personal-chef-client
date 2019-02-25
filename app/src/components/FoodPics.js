@@ -82,8 +82,8 @@ const Ul = styled.ul`
   // grid-template-columns: 10px repeat(${props => props.numOfLi || 3}, calc(50% - 40px)) 10px;
   grid-template-rows: minmax(300px, 1fr);
 
-  overflow-x: auto;
-  // scroll-snap-type: x proximity;
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
   padding-bottom: 15px;
   margin-bottom: -5px;
   }
@@ -95,17 +95,6 @@ const Ul = styled.ul`
 
   &.full {
     grid-column: 1 / -1;
-  }
-
-  .imgLi {
-    // scroll-snap-align: center;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    border-radius: 8px;
   }
 `;
 
