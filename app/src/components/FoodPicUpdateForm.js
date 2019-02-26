@@ -29,7 +29,13 @@ padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  min-width: 400px;
+  width: 400px;
+}
+
+@media (max-width: 500px) {
+  .contact {
+    width: 250px;
+  }
 }
 
 .none {
