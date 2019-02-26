@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import LoadingPics from './LoadingPics';
 
 import styled from 'styled-components';
 
@@ -192,7 +193,7 @@ const FoodPicUpdateForm = (props) => {
   }
 
   return (
-    isLoading ? <div>Loading...</div> :
+    isLoading ? <LoadingPics /> :
 
     <MainWrapper>
       <div className="formWrapper">

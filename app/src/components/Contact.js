@@ -108,27 +108,6 @@ const Contact = () => {
     setFields(input)
   }
 
-  // const submitForm = (e) => {
-  //   e.preventDefault();
-  //   if (validateForm()) {
-
-  //     setSubmitted(2)
-  //     setTimeout(() => {
-  //       setSubmitted(1);
-  //     }, 3000)
-
-  //     fetch("/", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //       body: encode({ "form-name": "contact", fields })
-  //     })
-
-  //     setFields({})
-  //     e.target.reset()
-  //     console.log("submit fields: ", fields, validateForm())
-  //   } else { setSubmitted(3) }
-  // }
-
   const submitForm = (e) => {
     if (!validateForm()) {
       e.preventDefault()

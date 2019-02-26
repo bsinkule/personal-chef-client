@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import star from '../static/images/rate.png';
 import FoodPicsLi from './FoodPicsLi';
+import LoadingPics from './LoadingPics';
 
 import styled from 'styled-components';
 
@@ -148,7 +149,7 @@ const FoodPics = (props) => {
 
   console.log("data: ", data)
   return (
-    isLoading ? <div>Loading...</div> :
+    isLoading ? <LoadingPics /> :
     
     <MainWrapper>
       <div className="formWrapper">

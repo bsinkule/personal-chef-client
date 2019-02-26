@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 import styled from 'styled-components';
@@ -121,32 +121,15 @@ fieldset {
 
 const FoodPicAddForm = (props) => {
   const imageAPI = 'https://go-personal-chef.herokuapp.com/images/'
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [itemType, setItemType] = useRadioButtons("item_type");
   const [imgOrientation, setImgOrientation] = useRadioButtons("orientation");
   const [isRecommended, setIsRecommended] = useRadioButtons("recommended");
-  const [ fields, setFields ] = useState({})
-  const [ errors, setErrors ] = useState({})
-  const [ submitted, setSubmitted ] = useState(1)
-
-
-  const fetchData = async () => {
-    setIsLoading(true);
-    const result = await axios(imageAPI);
-    setData(result.data);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [setData]);
+  const [fields, setFields] = useState({})
+  const [errors, setErrors] = useState({})
+  const [submitted, setSubmitted] = useState(1)
 
   const validateForm = () => {
     let fieldsAssigned = Object.assign({}, fields, itemType, imgOrientation, isRecommended)
-    setFields(fieldsAssigned)
-    console.log("fields in validate: ", fieldsAssigned)
-    console.log("imgOrientation: ", imgOrientation)
     let errors = {};
     let formIsValid = true;
 
@@ -182,28 +165,27 @@ const FoodPicAddForm = (props) => {
   const handleChange = (e) => {
     let input = fields;
     input[e.target.name] = e.target.value;
-
     setFields(input)
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     const fieldsAssigned = Object.assign({}, fields, itemType, imgOrientation, isRecommended)
-    setFields(fieldsAssigned)
 
     if (!validateForm()) {
+      e.preventDefault()
       return setSubmitted(3)
     } else {
+      e.preventDefault()
       axios.post(imageAPI, fieldsAssigned)
       setSubmitted(2)
       setTimeout(() => {
         setSubmitted(1);
+        location.reload()
       }, 3000)
     }
   }
-  
+
   return (
-    isLoading ? <div>Loading...</div> :
 
     <MainWrapper>
       <div className="formWrapper">
