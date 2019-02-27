@@ -84,6 +84,7 @@ const Ul = styled.ul`
   grid-template-rows: minmax(300px, 1fr);
 
   overflow-x: scroll;
+  overflow-y: hidden;
   scroll-snap-type: x proximity;
   padding-bottom: 15px;
   margin-bottom: -5px;
