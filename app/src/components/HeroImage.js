@@ -25,14 +25,16 @@ const MainWrapper = styled.div`
 
       h1 {
         font-size: 40px;
-        background-color: rgba(255, 245, 230, .9);
-        padding: 35px 15px;
+        // background-color: rgba(255, 245, 230, .9);
+        background-color: rgba(242, 242, 242, .85);
+        padding: 35px 25px;
         border-radius: 30px;
       }
 
       p {
-        background-color: rgba(255, 245, 230, .9);
-        padding: 5px;
+        // background-color: rgba(255, 245, 230, .9);
+        background-color: rgba(242, 242, 242, .85);
+        padding: 10px;
         border-radius: 20px;
         font-size: 18px;
       }

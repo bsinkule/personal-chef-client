@@ -37,11 +37,6 @@ const DrawerWrapper = styled.div`
     text-decoration: none; 
     color: black;
   }
-
-`;
-
-const ListWrapper = styled.div`
-  display: flex;
 `;
 
 const NavDrawer = (props) => {
@@ -55,7 +50,7 @@ const NavDrawer = (props) => {
   };
 
   const sideList = (
-    <DrawerWrapper > 
+    <DrawerWrapper> 
       <List>
           <ListItem button>
             <Link className="Link" to="/Home">

@@ -193,7 +193,19 @@ const Contact = () => {
             <div className="divInput">
               <label>Date you are interested in</label> <br/>
               <div className="red">* required</div>
-              <DayPickerInput onDayChange={day => setDate(day)} />
+              <DayPickerInput
+                onDayChange={day => setDate(day)} 
+                dayPickerProps={{
+                  disabledDays: [
+                    new Date(2019, 2, 27),
+                    new Date(2019, 2, 28),
+                    {
+                      after: new Date(2019, 2, 11),
+                      before: new Date(2019, 2, 17),
+                    }
+                  ]
+                }}
+              />
               <input className="none input" type="text" name="date" defaultValue={date}  onChange={handleChange}/>
               <div className="errorMsg">{errors.date}</div>
             </div>

@@ -23,12 +23,12 @@ const Calendar = () => {
       <DayPicker
         disabledDays={[
           new Date(2019, 0, 25),
-          new Date(2019, 1, 3),
-          new Date(2019, 1, 5),
-          new Date(2019, 1, 21),
+          new Date(2019, 2, 3),
+          new Date(2019, 2, 5),
+          new Date(2019, 2, 21),
           {
-            after: new Date(2019, 1, 11),
-            before: new Date(2019, 1, 17),
+            after: new Date(2019, 2, 11),
+            before: new Date(2019, 2, 17),
           },
         ]}
       />
