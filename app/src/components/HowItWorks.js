@@ -12,7 +12,7 @@ const MainWrapper = styled.div`
 
   .fullWidthGrey {
     width: 100%;
-    height: 225px;
+    height: 240px;
     background-color: rgb(249, 249, 249);
   }
 
