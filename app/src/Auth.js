@@ -9,8 +9,8 @@ class Auth {
       this.auth0 = new auth0.WebAuth({
           domain: "bsinkule.auth0.com",
           clientID: "SGoLExkoRlvrsDX5Dh8yu0B5g4y60Z6O",
-          // redirectUri: "https://personal-chef-bsinkule.netlify.com/callback",
-          redirectUri: "http://localhost:8080/callback",
+          redirectUri: "https://personal-chef-bsinkule.netlify.com/callback",
+          // redirectUri: "http://localhost:8080/callback",
           audience: "https://bsinkule.auth0.com/userinfo",
           responseType: "token id_token",
           scope: "openid",
