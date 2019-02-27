@@ -65,6 +65,7 @@ padding-bottom: 100px;
   font-size: 20px;
   border-radius: 5px;
   background-color: white;
+  border: 1px solid white;
   margin: 20px;
   padding: 10px;
   cursor: pointer;

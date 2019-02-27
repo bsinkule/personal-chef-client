@@ -47,6 +47,7 @@ const Li = styled.li`
 
   .deleteUpdateButton {
     background-color: rgba(255, 245, 230, .9);
+    border: 1px solid rgba(255, 245, 230, .9);
     border-radius: 20px;
     margin-top: 5px;
     cursor: pointer;
