@@ -74,7 +74,7 @@ const MainWrapper = styled.div`
 
 `;
 
-const About = (props) => {
+const About = () => {
   return (
     <MainWrapper>
       <div className="wrapper">
@@ -94,7 +94,7 @@ const About = (props) => {
         <div className="aboutInfoReverse">
           <div className="textContent">
             <h3>Constance</h3>
-            <div className="textContent">"After spending many years in the restaurant and bar industry, I decided it was time take all the experience and knowledge
+            <div className="textContent">"After spending many years in the restaurant and bar industry, I decided it was time to take all the experience and knowledge
               I've gained and apply it to something I truly enjoy, KCO Dining. It's always so great working with every one of our clients. I
               am also a Registered Nurse and a full time Mom. Check out my instagram to see what we're up to."
             </div>
