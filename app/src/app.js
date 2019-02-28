@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 import { checkAuthenticated } from './actions/checkAuthenticated';
-
 import Main from './components/auth/Main.js';
 import Login from './components/auth/Login.js';
 import NotFound from './components/auth/NotFound.js';
@@ -12,36 +12,6 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import CalendarButton from './components/CalendarButton';
 import Calendar from './components/Calendar';
-
-import styled from 'styled-components';
-
-const MainWrapper = styled.div`
-
-  .top-nav {
-    background-color: transparent;
-    transition: .6s ease;
-    -webkit-transition: .6s ease;
-    -moz-transition: .6s ease;
-    -o-transition: .6s ease;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    top: 0;
-  }
-
-  .tippy {
-    background-color: rgba(242, 242, 242, .95);
-    transition: .6s ease;
-    -webkit-transition: .6s ease;
-    -moz-transition: .6s ease;
-    -o-transition: .6s ease;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    top: -.1px;
-  }
-
-`;
 
 
 class App extends Component {
@@ -114,3 +84,31 @@ const mapStateToProps = (state) => ({
 export default withRouter(connect(mapStateToProps, bindActions)(App));
 
 {/* <button onClick={() => window.scroll({ top: 0, left: 0, behavior: 'smooth' })}>TOP</button> */}
+
+const MainWrapper = styled.div`
+
+  .top-nav {
+    background-color: transparent;
+    transition: .6s ease;
+    -webkit-transition: .6s ease;
+    -moz-transition: .6s ease;
+    -o-transition: .6s ease;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+  }
+
+  .tippy {
+    background-color: rgba(242, 242, 242, .95);
+    transition: .6s ease;
+    -webkit-transition: .6s ease;
+    -moz-transition: .6s ease;
+    -o-transition: .6s ease;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: -.1px;
+  }
+
+`;

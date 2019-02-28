@@ -1,7 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import styled from 'styled-components';
+
+const HeroImage = () => {
+  return (
+    <MainWrapper>
+      <div className="hero-image">
+        <div className="hero-text">
+          <img src="https://img.icons8.com/wired/2x/food-and-wine.png" alt="logo" />
+          <h1>Denver's Best Dinner Party Duo</h1>
+          <p>"Amazing flavors, unique items, Kyle and Con are so much fun to work with!" - Beth and Michael Ward</p>
+          {/* <button><Link to="/Contact" className="Link">contact us</Link></button> */}
+        </div>
+      </div>
+    </MainWrapper>
+  )
+}
+
+export default HeroImage;
 
 const MainWrapper = styled.div`
   .hero-image {
@@ -44,20 +60,3 @@ const MainWrapper = styled.div`
 
   }
 `;
-
-const HeroImage = () => {
-  return (
-    <MainWrapper>
-      <div className="hero-image">
-        <div className="hero-text">
-          <img src="https://img.icons8.com/wired/2x/food-and-wine.png" alt="logo" />
-          <h1>Denver's Best Dinner Party Duo</h1>
-          <p>"Amazing flavors, unique items, Kyle and Con are so much fun to work with!" - Beth and Michael Ward</p>
-          {/* <button><Link to="/Contact" className="Link">contact us</Link></button> */}
-        </div>
-      </div>
-    </MainWrapper>
-  )
-}
-
-export default HeroImage;

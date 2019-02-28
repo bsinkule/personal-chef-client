@@ -1,11 +1,5 @@
 import React from 'react'
-
 import styled from 'styled-components';
-
-const Para = styled.p`
-  margin: 0;
-  cursor: pointer;
-`;
 
 const Login = (props) => {
   return (
@@ -20,3 +14,9 @@ const Login = (props) => {
 }
 
 export default Login;
+
+const Para = styled.p`
+  margin: 0;
+  cursor: pointer;
+`;
+

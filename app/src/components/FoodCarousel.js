@@ -1,18 +1,6 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-
 import styled from 'styled-components';
-
-const MainWrapper = styled.div`
-  
-  div {
-    max-height: 60vh;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-`;
 
  const FoodCarousel = () => {
    return (
@@ -43,4 +31,15 @@ const MainWrapper = styled.div`
     )
   };
 
-export default FoodCarousel
+export default FoodCarousel;
+
+
+const MainWrapper = styled.div`
+  
+  div {
+    max-height: 60vh;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;

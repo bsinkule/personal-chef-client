@@ -6,8 +6,97 @@ import { Link } from 'react-router-dom';
 import star from '../static/images/rate.png';
 import FoodPicsLi from './FoodPicsLi';
 import LoadingPics from './LoadingPics';
-
 import styled from 'styled-components';
+
+const FoodPics = (props) => {
+
+  const imageAPI = 'https://go-personal-chef.herokuapp.com/images/'
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const fetchData = async () => {
+    setIsLoading(true);
+    const result = await axios(imageAPI);
+    setData(result.data);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [setData]);
+
+  const deleteFoodPic = (id) => {
+    axios.delete(imageAPI + id)
+    .then(res => {
+      setData(res.data.reverse())
+    })
+  }
+
+  const numberOfLis = (typeString) => {
+    const filteredType = data.filter(items => items.item_type === typeString);
+    const portrait = filteredType.filter(port => port.orientation === "portrait");
+    const landscape = filteredType.filter(land => land.orientation === "landscape");
+    const doubleLandscape = landscape.length * 2
+    return doubleLandscape + portrait.length
+  }
+
+  const filteredImgs = (typeString) => {
+    const filterByItemType = data.filter(ent => ent.item_type === typeString)
+    const imgs = filterByItemType.map(item => {
+      return <FoodPicsLi id={item.id}
+                          img_url={item.img_url}
+                          title={item.title}
+                          key={item.id}
+                          item_type={item.item_type}
+                          recommended={item.recommended}
+                          orientation={item.orientation}
+                          deleteFoodPic={deleteFoodPic}
+                          />
+    })
+    return imgs
+  }
+
+  console.log("data: ", data)
+  return (
+    isLoading ? <LoadingPics /> :
+    
+    <MainWrapper>
+      <div className="formWrapper">
+        <div className="topOfPics">
+          <div className="popular"><img className="star" src={star} alt="star"/>popular</div>
+          {props.checkAuth ? <button className="addImgButton"><Link className="Link" to={`/addfoodpic`}>Add Food Pic</Link></button> : null}
+        </div>
+        <h1>Entrées</h1>
+        <Ul numOfLi={numberOfLis("entree")} className="full">
+          {filteredImgs("entree")}
+        </Ul>
+        <h1>Appetizers</h1>
+        <Ul numOfLi={numberOfLis("appetizer")} className="full">
+          {filteredImgs("appetizer")}
+        </Ul>
+        <h1>Drinks</h1>
+        <Ul numOfLi={numberOfLis("drink")} className="full">
+          {filteredImgs("drink")}
+        </Ul>
+        <h1>Soups / Salads</h1>
+        <Ul numOfLi={numberOfLis("soup/salad")} className="full">
+          {filteredImgs("soup/salad")}
+        </Ul>
+        <h1>Desserts</h1>
+        <Ul numOfLi={numberOfLis("dessert")} className="full">
+          {filteredImgs("dessert")}
+        </Ul>
+      </div>
+    </MainWrapper>
+  )
+}
+
+const mapStateToProps = (state) => ({
+  checkAuth: state.checkAuth.authenticated,
+});
+
+export default connect(mapStateToProps, null)(FoodPics);
+
 
 const MainWrapper = styled.div`
   background-image: url("https://agc.creativelive.com/agc/courses/5138-1.jpg");
@@ -100,92 +189,3 @@ const Ul = styled.ul`
     grid-column: 1 / -1;
   }
 `;
-
-const FoodPics = (props) => {
-
-  const imageAPI = 'https://go-personal-chef.herokuapp.com/images/'
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  
-  const fetchData = async () => {
-    setIsLoading(true);
-    const result = await axios(imageAPI);
-    setData(result.data);
-    setIsLoading(false);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [setData]);
-
-  const deleteFoodPic = (id) => {
-    axios.delete(imageAPI + id)
-    .then(res => {
-      setData(res.data.reverse())
-    })
-  }
-
-  const numberOfLis = (typeString) => {
-    const filteredType = data.filter(items => items.item_type === typeString);
-    const portrait = filteredType.filter(port => port.orientation === "portrait");
-    const landscape = filteredType.filter(land => land.orientation === "landscape");
-    const doubleLandscape = landscape.length * 2
-    return doubleLandscape + portrait.length
-  }
-
-  const filteredImgs = (typeString) => {
-    const filterByItemType = data.filter(ent => ent.item_type === typeString)
-    const imgs = filterByItemType.map(item => {
-      return <FoodPicsLi id={item.id}
-                          img_url={item.img_url}
-                          title={item.title}
-                          key={item.id}
-                          item_type={item.item_type}
-                          recommended={item.recommended}
-                          orientation={item.orientation}
-                          deleteFoodPic={deleteFoodPic}
-                          />
-    })
-    return imgs
-  }
-
-  console.log("data: ", data)
-  return (
-    isLoading ? <LoadingPics /> :
-    
-    <MainWrapper>
-      <div className="formWrapper">
-        <div className="topOfPics">
-          <div className="popular"><img className="star" src={star} alt="star"/>popular</div>
-          {props.checkAuth ? <button className="addImgButton"><Link className="Link" to={`/addfoodpic`}>Add Food Pic</Link></button> : null}
-        </div>
-        <h1>Entrées</h1>
-        <Ul numOfLi={numberOfLis("entree")} className="full">
-          {filteredImgs("entree")}
-        </Ul>
-        <h1>Appetizers</h1>
-        <Ul numOfLi={numberOfLis("appetizer")} className="full">
-          {filteredImgs("appetizer")}
-        </Ul>
-        <h1>Drinks</h1>
-        <Ul numOfLi={numberOfLis("drink")} className="full">
-          {filteredImgs("drink")}
-        </Ul>
-        <h1>Soups / Salads</h1>
-        <Ul numOfLi={numberOfLis("soup/salad")} className="full">
-          {filteredImgs("soup/salad")}
-        </Ul>
-        <h1>Desserts</h1>
-        <Ul numOfLi={numberOfLis("dessert")} className="full">
-          {filteredImgs("dessert")}
-        </Ul>
-      </div>
-    </MainWrapper>
-  )
-}
-
-const mapStateToProps = (state) => ({
-  checkAuth: state.checkAuth.authenticated,
-});
-
-export default connect(mapStateToProps, null)(FoodPics);

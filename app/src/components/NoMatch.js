@@ -2,6 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+const NoMatch = () => {
+
+  return (
+    <MainWrapper>
+      <div>
+        <h1>Route Doesn't Match</h1>
+        <button className="backToHomeButton"><Link className="Link" to="/home">Home</Link></button>
+      </div>
+    </MainWrapper>
+  )
+}
+
+export default NoMatch;
+
 const MainWrapper = styled.div`
   background-image: url("https://agc.creativelive.com/agc/courses/5138-1.jpg");
   background-position: center center;
@@ -40,17 +54,3 @@ const MainWrapper = styled.div`
   }
 
 `;
-
-const NoMatch = () => {
-
-  return (
-    <MainWrapper>
-      <div>
-        <h1>Route Doesn't Match</h1>
-        <button className="backToHomeButton"><Link className="Link" to="/home">Home</Link></button>
-      </div>
-    </MainWrapper>
-  )
-}
-
-export default NoMatch;

@@ -1,10 +1,48 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import styled from 'styled-components';
 import star from '../static/images/rate.png';
 
-import styled from 'styled-components';
+const FoodPicsLi = (props) => {
+
+  return (
+    <Li 
+      key={props.id}
+      className={(props.orientation === "landscape") ? "wide" : ""}
+    >
+      {props.recommended === "yes" 
+      ? 
+      <div className="imgContainer">
+        <img className="star" src={star} alt="star"/>
+        <img className="recommended foodPic" src={props.img_url} alt="food pic"/>
+      </div> 
+      :
+      <div>
+        <img className="foodPic" src={props.img_url} alt="food pic"/>
+      </div>
+      }
+      <h5>{props.title}</h5>
+      {props.checkAuth 
+      ?
+      <div>
+        <div className="cta">
+          <button className="deleteUpdateButton" onClick={() => props.deleteFoodPic(props.id)}>Delete</button>
+          <button className="deleteUpdateButton"><Link className="Link" to={`/foodpicupdateform/${props.id}`}>Update</Link></button>
+        </div>
+      </div>
+      :
+      null
+      }
+    </Li>
+  )
+}
+
+const mapStateToProps = (state) => ({
+  checkAuth: state.checkAuth.authenticated,
+});
+
+export default connect(mapStateToProps, null)(FoodPicsLi);
 
 const Li = styled.li`
   // scroll-snap-align: center;
@@ -69,43 +107,3 @@ const Li = styled.li`
   }
 
 `;
-
-const FoodPicsLi = (props) => {
-
-  return (
-    <Li 
-      key={props.id}
-      className={(props.orientation === "landscape") ? "wide" : ""}
-    >
-      {props.recommended === "yes" 
-      ? 
-      <div className="imgContainer">
-        <img className="star" src={star} alt="star"/>
-        <img className="recommended foodPic" src={props.img_url} alt="food pic"/>
-      </div> 
-      :
-      <div>
-        <img className="foodPic" src={props.img_url} alt="food pic"/>
-      </div>
-      }
-      <h5>{props.title}</h5>
-      {props.checkAuth 
-      ?
-      <div>
-        <div className="cta">
-          <button className="deleteUpdateButton" onClick={() => props.deleteFoodPic(props.id)}>Delete</button>
-          <button className="deleteUpdateButton"><Link className="Link" to={`/foodpicupdateform/${props.id}`}>Update</Link></button>
-        </div>
-      </div>
-      :
-      null
-      }
-    </Li>
-  )
-}
-
-const mapStateToProps = (state) => ({
-  checkAuth: state.checkAuth.authenticated,
-});
-
-export default connect(mapStateToProps, null)(FoodPicsLi);

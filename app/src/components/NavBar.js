@@ -1,9 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 import NavDrawer from './NavDrawer'
 
-import styled from 'styled-components';
+const NavBar = (props) => {
+  return (
+    <MainWrapper>
+      <li className="icon"><Link className="Link" to="/Home"><img className="wine" src="https://img.icons8.com/wired/2x/food-and-wine.png" alt="cheese and wine icon"/></Link><div>kco<br/>dining</div></li>
+      <li className="media li"><Link className="Link" to="/FoodPics">food pics</Link></li>
+      <li className="media li"><Link className="Link" to="/About">about us</Link></li>
+      <li className="media li"><Link className="Link" to="/FAQ">FAQs</Link></li>
+      <li className="media li"><Link className="Link" to="/Contact">contact</Link></li>
+      <NavDrawer />
+    </MainWrapper>
+  )
+}
+
+export default NavBar;
+
 
 const MainWrapper = styled.ul`
   display: flex;
@@ -56,18 +71,3 @@ const MainWrapper = styled.ul`
     }
   }
 `;
-
-const NavBar = (props) => {
-  return (
-    <MainWrapper>
-      <li className="icon"><Link className="Link" to="/Home"><img className="wine" src="https://img.icons8.com/wired/2x/food-and-wine.png" alt="cheese and wine icon"/></Link><div>kco<br/>dining</div></li>
-      <li className="media li"><Link className="Link" to="/FoodPics">food pics</Link></li>
-      <li className="media li"><Link className="Link" to="/About">about us</Link></li>
-      <li className="media li"><Link className="Link" to="/FAQ">FAQs</Link></li>
-      <li className="media li"><Link className="Link" to="/Contact">contact</Link></li>
-      <NavDrawer />
-    </MainWrapper>
-  )
-}
-
-export default NavBar;

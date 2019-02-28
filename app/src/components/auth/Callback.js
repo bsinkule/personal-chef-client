@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
-import Auth from "../../Auth";
-
 import styled from 'styled-components';
-
-const Para = styled.p`
-  margin: 0;
-`;
+import Auth from "../../Auth";
 
 class Callback extends Component {
   componentDidMount(){
@@ -21,3 +16,9 @@ class Callback extends Component {
 }
 
 export default Callback;
+
+
+const Para = styled.p`
+  margin: 0;
+`;
+

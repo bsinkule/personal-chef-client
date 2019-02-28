@@ -2,76 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-
 import styled from 'styled-components';
-
-const MainWrapper = styled.div`
-  background-image: url("https://agc.creativelive.com/agc/courses/5138-1.jpg");
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  padding-top: 75px;
-  padding-bottom: 75px;
-
-  .faqWrapper {
-    width: 90%;
-    max-width: 800px;
-    background-color: rgba(224,224,224, .9);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
-    border-radius: 10px;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 25px;
-  }
-
-  .aboutTop {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .faqLink {
-    color: black;
-    margin-bottom: 5px;
-  }
-
-  .anch {
-    min-height: 200px;
-    padding: 15px;
-  }
-
-  .flexQAOrange {
-    display: flex;
-    background-color: rgba(255, 245, 230, .4);
-    align-items: center;
-  }
-
-  .flexQA {
-    display: flex;
-    align-items: center;
-    border-left: 2px solid grey;
-  }
-
-  .bigQ {
-    font-size: 30px;
-    color: Orange;
-    border-left: 2px solid orange;
-    padding: 25px 15px;
-  }
-
-  .bigA {
-    font-size: 30px;
-    padding: 25px 15px;
-    color: grey;
-  }
-
-  .answerContent {
-    padding: 15px 15px 0px 0px;
-  }
-`;
 
 const FAQ = (props) => {
   console.log("FAQ props: ", props)
@@ -151,3 +82,72 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, null)(FAQ);
+
+
+const MainWrapper = styled.div`
+  background-image: url("https://agc.creativelive.com/agc/courses/5138-1.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  .faqWrapper {
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(224,224,224, .9);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    border-radius: 10px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .aboutTop {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faqLink {
+    color: black;
+    margin-bottom: 5px;
+  }
+
+  .anch {
+    min-height: 200px;
+    padding: 15px;
+  }
+
+  .flexQAOrange {
+    display: flex;
+    background-color: rgba(255, 245, 230, .4);
+    align-items: center;
+  }
+
+  .flexQA {
+    display: flex;
+    align-items: center;
+    border-left: 2px solid grey;
+  }
+
+  .bigQ {
+    font-size: 30px;
+    color: Orange;
+    border-left: 2px solid orange;
+    padding: 25px 15px;
+  }
+
+  .bigA {
+    font-size: 30px;
+    padding: 25px 15px;
+    color: grey;
+  }
+
+  .answerContent {
+    padding: 15px 15px 0px 0px;
+  }
+`;

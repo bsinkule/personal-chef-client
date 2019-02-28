@@ -1,8 +1,38 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import styled from 'styled-components';
+
+const Footer = (props) => {
+  return (
+    <MainWrapper>
+      <div className="centeredWrapper">
+        <div className="siteMap">
+          <h4 className="siteH4">Site Map ></h4>
+          <Link className="Link" to="/Home">home</Link>
+          <Link className="Link" to="/FoodPics">food pics</Link>
+          <Link className="Link" to="/About">about us</Link>
+        </div>
+        <div className="siteMap2">
+          <Link className="Link" to="/FAQ">FAQs</Link>
+          <Link className="Link" to="/Contact">contact</Link>
+          {props.mainComponent}   
+        </div>
+        <div className="siteMap">
+          <h4 className="siteH4">Follow Us ></h4>
+          <a className="Link" href="https://www.instagram.com/" target="_blank"><img style={{ width: "40px"}} src="https://uploads-ssl.webflow.com/594502e60d8aed43609fd300/59737456b23cc947a7d831d8_instagram%20icon.png" alt="instagram icon" /></a>
+        </div>
+      </div>
+    </MainWrapper>
+  )
+};
+
+const mapStateToProps = (state) => ({
+  checkAuth: state.checkAuth.authenticated,
+});
+
+export default connect(mapStateToProps, null)(Footer);
+
 
 const MainWrapper = styled.div`
   background-color: #404040;
@@ -44,36 +74,4 @@ const MainWrapper = styled.div`
     margin: 0;
     padding-bottom: 15px;
   }
-
 `;
-
-const Footer = (props) => {
-  return (
-    <MainWrapper>
-      <div className="centeredWrapper">
-        <div className="siteMap">
-          <h4 className="siteH4">Site Map ></h4>
-          <Link className="Link" to="/Home">home</Link>
-          <Link className="Link" to="/FoodPics">food pics</Link>
-          <Link className="Link" to="/About">about us</Link>
-        </div>
-        <div className="siteMap2">
-          <Link className="Link" to="/FAQ">FAQs</Link>
-          <Link className="Link" to="/Contact">contact</Link>
-          {props.mainComponent}   
-        </div>
-        <div className="siteMap">
-          <h4 className="siteH4">Follow Us ></h4>
-          <a className="Link" href="https://www.instagram.com/" target="_blank"><img style={{ width: "40px"}} src="https://uploads-ssl.webflow.com/594502e60d8aed43609fd300/59737456b23cc947a7d831d8_instagram%20icon.png" alt="instagram icon" /></a>
-        </div>
-      </div>
-    </MainWrapper>
-  )
-};
-
-const mapStateToProps = (state) => ({
-  checkAuth: state.checkAuth.authenticated,
-});
-
-export default connect(mapStateToProps, null)(Footer);
-

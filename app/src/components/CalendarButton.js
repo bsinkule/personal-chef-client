@@ -1,8 +1,16 @@
 import React from 'react';
-
+import styled from 'styled-components';
 import calendar from '../static/images/001-calendar.png';
 
-import styled from 'styled-components';
+const CalendarButton = () => {
+  return (
+    <MainWrapper>
+      <img className="imgIcon" src={calendar}  alt="calendar icon"/>
+    </MainWrapper> 
+  )
+}
+
+export default CalendarButton;
 
 const MainWrapper = styled.div`
   position: fixed;
@@ -23,13 +31,3 @@ const MainWrapper = styled.div`
     padding: 15px;
   }
 `;
-
-const CalendarButton = () => {
-  return (
-    <MainWrapper>
-      <img className="imgIcon" src={calendar}  alt="calendar icon"/>
-    </MainWrapper> 
-  )
-}
-
-export default CalendarButton;

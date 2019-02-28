@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
@@ -14,30 +15,6 @@ import Home from '@material-ui/icons/Home';
 import CameraAlt from '@material-ui/icons/CameraAlt';
 import Email from '@material-ui/icons/Email';
 import ListAlt from '@material-ui/icons/ListAlt';
-
-import styled from 'styled-components';
-
-const MainWrapper = styled.div`
-  margin-right: 20px;
-
-  @media (min-width: 600px) {
-    display: none;
-  }
-
-  .IconButton {
-    padding: 5px;
-  }
-`;
-
-const DrawerWrapper = styled.div`
-  width: 200px;
-
-  .Link {
-    display: flex; 
-    text-decoration: none; 
-    color: black;
-  }
-`;
 
 const NavDrawer = (props) => {
   
@@ -112,3 +89,25 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, null)(NavDrawer);
+
+const MainWrapper = styled.div`
+  margin-right: 20px;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
+
+  .IconButton {
+    padding: 5px;
+  }
+`;
+
+const DrawerWrapper = styled.div`
+  width: 200px;
+
+  .Link {
+    display: flex; 
+    text-decoration: none; 
+    color: black;
+  }
+`;

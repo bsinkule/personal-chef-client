@@ -1,11 +1,5 @@
 import React from 'react'
-
 import styled from 'styled-components';
-
-const Para = styled.p`
-  margin: 0;
-  cursor: pointer;
-`;
 
 const NotFound = (props) => {
   return (
@@ -20,3 +14,8 @@ const NotFound = (props) => {
 }
 
 export default NotFound;
+
+const Para = styled.p`
+  margin: 0;
+  cursor: pointer;
+`;

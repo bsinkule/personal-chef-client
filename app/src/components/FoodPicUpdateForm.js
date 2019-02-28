@@ -1,122 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import LoadingPics from './LoadingPics';
-
 import styled from 'styled-components';
-
-const MainWrapper = styled.div`
-background-image: url("https://agc.creativelive.com/agc/courses/5138-1.jpg");
-background-position: center center;
-background-attachment: fixed;
-background-size: cover;
-padding-top: 75px;
-padding-bottom: 100px; 
-
-.formWrapper {
-  width: 90%;
-  max-width: 800px;
-  background-color: rgba(224,224,224, .9);
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
-  border-radius: 10px;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 400px;
-}
-
-@media (max-width: 500px) {
-  .contact {
-    width: 250px;
-  }
-}
-
-.none {
-  display: none;
-}
-
-.divInput {
-  margin-bottom: 10px;
-}
-
-.input {
-  width: 100%;
-  border-radius: 5px;
-  height: 2em;
-}
-
-.red {
-  color: red;
-  font-size: 8px;
-}
-
-.alignButton {
-  align-self: center;
-}
-
-.button {
-  font-size: 20px;
-  border-radius: 5px;
-  background-color: white;
-  border: 1px solid white;
-  margin: 20px;
-  padding: 10px;
-  cursor: pointer;
-
-    :hover {
-      background-color: transparent;
-    }
-}
-
-.errorMsg {
-  margin: 5px 0px;
-  background-color: rgba(255, 0, 0, .6);
-  border-radius: 3px;
-  line-height: 1.5;
-}
-
-.fail {
-  background-color: rgba(255, 0, 0, .6);
-  border-radius: 3px;
-  text-align: center;
-  padding: 10px;
-}
-
-.success {
-  background-color: rgba(102, 255, 102, .6);
-  border-radius: 3px;
-  text-align: center;
-  padding: 10px;
-}
-
-fieldset {
-  background-color: white;
-  border: 0px;
-  border-radius: 3px;
-  box-shadow: inset 2px 2px 0px 0 rgba(0,0,0,0.4);
-  display: flex;
-  flex-direction: column;
-
-    div {
-      display: flex;
-      align-items: center;
-
-      input[type=radio] {
-        border: 0px;
-        height: 3em;
-        width: 30px;
-        margin-right: 15px;
-      }
-    }
-}
-`;
+import LoadingPics from './LoadingPics';
 
 const FoodPicUpdateForm = (props) => {
   const imageAPI = 'https://go-personal-chef.herokuapp.com/images/'
@@ -357,3 +242,117 @@ const useRadioButtons = (name) => {
   };
   return [value, inputProps];
 }
+
+const MainWrapper = styled.div`
+background-image: url("https://agc.creativelive.com/agc/courses/5138-1.jpg");
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
+padding-top: 75px;
+padding-bottom: 100px; 
+
+.formWrapper {
+  width: 90%;
+  max-width: 800px;
+  background-color: rgba(224,224,224, .9);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  border-radius: 10px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 400px;
+}
+
+@media (max-width: 500px) {
+  .contact {
+    width: 250px;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.divInput {
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 100%;
+  border-radius: 5px;
+  height: 2em;
+}
+
+.red {
+  color: red;
+  font-size: 8px;
+}
+
+.alignButton {
+  align-self: center;
+}
+
+.button {
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid white;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+
+    :hover {
+      background-color: transparent;
+    }
+}
+
+.errorMsg {
+  margin: 5px 0px;
+  background-color: rgba(255, 0, 0, .6);
+  border-radius: 3px;
+  line-height: 1.5;
+}
+
+.fail {
+  background-color: rgba(255, 0, 0, .6);
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px;
+}
+
+.success {
+  background-color: rgba(102, 255, 102, .6);
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px;
+}
+
+fieldset {
+  background-color: white;
+  border: 0px;
+  border-radius: 3px;
+  box-shadow: inset 2px 2px 0px 0 rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      input[type=radio] {
+        border: 0px;
+        height: 3em;
+        width: 30px;
+        margin-right: 15px;
+      }
+    }
+}
+`;

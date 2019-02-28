@@ -1,20 +1,6 @@
 import React from 'react';
 import DayPicker from 'react-day-picker';
-
 import styled from 'styled-components';
-
-const MainWrapper = styled.div`
-  position: fixed;
-  bottom: 80px;
-  right: 80px;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid grey;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
-`;
 
 const Calendar = () => {
   return (
@@ -37,6 +23,20 @@ const Calendar = () => {
 }
 
 export default Calendar;
+
+
+const MainWrapper = styled.div`
+  position: fixed;
+  bottom: 80px;
+  right: 80px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+`;
 
 // import React, { Component } from 'react';
 // import { connect } from 'react-redux';
