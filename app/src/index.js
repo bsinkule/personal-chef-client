@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './style.scss';
-
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router'
 import configStore, { history } from './configStore'
-
 import App from './app';
 import AppRouter from './components/AppRouter';
-import Auth from "./Auth";
+import Auth from './Auth';
+import ScrollToTop from './components/ScrollToTop';
 
 const store = configStore()
 window.store = store
@@ -22,9 +20,11 @@ window.setState = (changes) => {
   ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-          <App {...state}>
-            <AppRouter />
-          </App>
+          <ScrollToTop>
+            <App {...state}>
+              <AppRouter />
+            </App>
+          </ScrollToTop>
         </ConnectedRouter>
     </Provider>, 
     document.getElementById('app')

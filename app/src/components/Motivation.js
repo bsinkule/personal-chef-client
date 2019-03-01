@@ -77,7 +77,7 @@ const Ul = styled.ul`
     line-height: 1.5;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     display: flex;
     flex-direction: column;
     align-items: center;
