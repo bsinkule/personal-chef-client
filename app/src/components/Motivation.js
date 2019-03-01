@@ -15,7 +15,7 @@ const Motivation = () => {
         </div>
       </li>
       <li>
-        <img src="https://images.unsplash.com/photo-1546197244-cdd3a3fc80a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" className="resp" alt="people" />
+        <img src="https://i.imgur.com/z7kqXpL.jpg" className="resp" alt="people" />
         <h3>Hosting</h3>
         <div className="body">
           <p>

@@ -11,7 +11,7 @@ import styled from 'styled-components';
         showThumbs={false}
         stopOnHover={false}
         interval={3500}
-        transitionTime={700}
+        transitionTime={900}
         autoPlay
       >
         <div className="imgContainer">
