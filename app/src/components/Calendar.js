@@ -8,10 +8,14 @@ const Calendar = () => {
       <div>Available Dates</div>
       <DayPicker
         disabledDays={[
-          new Date(2019, 0, 25),
-          new Date(2019, 2, 3),
-          new Date(2019, 2, 5),
-          new Date(2019, 2, 21),
+          new Date(2019, 8, 27),
+          new Date(2019, 8, 30),
+          new Date(2019, 9, 1),
+          new Date(2019, 9, 4),
+          new Date(2019, 9, 18),
+          new Date(2019, 9, 21),
+          new Date(2019, 9, 22),
+          new Date(2019, 9, 23),
           {
             after: new Date(2019, 2, 11),
             before: new Date(2019, 2, 17),
